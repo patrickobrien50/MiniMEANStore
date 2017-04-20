@@ -1,0 +1,21 @@
+{
+  "name": "friends",
+  "homepage": "https://github.com/lelin999/MEAN",
+  "authors": [
+    "Le Lin <lelin999@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='angular/angular.js'></script>
+	<script src='angular-route/angular-route.js'></script>
+	<script src='./assets/app.js'></script>
+	<script src='./assets/controllers/orderController.js'></script>
+	<script src='./assets/controllers/productController.js'></script>
+	<script src='./assets/controllers/customerController.js'></script>
+	<script src='./assets/controllers/mainController.js'></script>
+	<script src='./assets/factories/productsFactory.js'></script>
+	<script src='./assets/factories/customersFactory.js'></script>
+	<script src='./assets/factories/ordersFactory.js'></script>
+	<title></title>
+</head>
+<body ng-app='app'>
+	<a href='#!/'>Dashboard</a> | <a href='#!/products'>Products</a> | <a href='#!/orders'>Orders</a> | <a href='#!/customers'>Customers</a>
+	<div ng-view=""></div>
+</body>
+</html>

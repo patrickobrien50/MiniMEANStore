@@ -1,0 +1,18 @@
+<div ng-controller="MainController">
+	<div ng-repeat="product in products">
+		<div>
+			<img src="{{product.image}}">
+		</div>
+		<p>{{product.name}}</p>
+		<p>{{product.qty}}</p>
+	</div>
+	<br>
+	<h1>Recent Orders</h1>
+	<div ng-repeat="order in orders | orderBy: createdAt">
+		<p>{{order.customer}} purchased {{order.orderQty}} {{order.product}}</p>
+	</div>
+	<h1>New Customers</h1>
+	<div ng-repeat="customer in customers | orderBy: createdAt">
+		<p>{{customer.name}} joined the store</p>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<div ng-controller="ProductController">
+	<div ng-if="messages">
+		{{messages}}
+	</div>
+	<input type="text" ng-model="searchBar" placeholder="search...">
+	<h3>Add a New Product</h3>
+	<form ng-submit="createProduct()">
+		<label>Name: </label>
+		<input type="text" ng-model="newProduct.name" placeholder="name..."><br>
+		<label>Image: </label>
+		<input type="text" ng-model="newProduct.image" placeholder="http://"><br>
+		<label>Description: </label>
+		<input type="text" ng-model="newProduct.description"><br>
+		<label>Initial Quantity: </label>
+		<input type="number" step="1" ng-model="newProduct.qty"><br>
+		<input type="submit" value="Create">
+	</form>
+	<div ng-repeat="product in products">
+		<div>
+			<div ng-if="product.image"><img src="{{product.image}}" alt="a bird"></div>
+			<p>{{product.name}}</p>
+			<p>({{product.qty}} left)</p>
+		</div>
+	</div>
+</div>

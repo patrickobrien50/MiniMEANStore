@@ -1,0 +1,35 @@
+<div ng-controller="OrderController">
+	<h3>Add a New ORDER</h3>
+	<form ng-submit="createOrder()">
+		<label>Customer</label>
+		<select ng-options="customer as customer.name for customer in customers track by customer._id" ng-model="newOrder.customer"></select><br>
+		<label>Product</label>
+
+		{{newOrder.product.name}}
+		{{newOrder.product.qty}}
+		<select ng-options="product.name for product in products track by product._id" ng-model="newOrder.product"></select>
+		<label>Quantity to Order</label>
+		<select ng-model="newOrder.orderQty">
+			<option ng-repeat="i in makeArray(newOrder.product.qty) track by $index">{{$index + 1}}</option>
+		</select>
+		{{newOrder.product}}
+		{{products[3].qty}}
+		<input type="submit" value="Order">
+	</form>
+	<br>
+	<input type="text" ng-model="searchBar" placeholder="filter...">
+	<table>
+		<tr>
+			<th>Customer Name</th>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Date</th>
+		</tr>
+		<tr ng-repeat="order in orders">
+			<td>{{order.customer}}</td>
+			<td>{{order.product}}</td>
+			<td>{{order.orderQty}}</td>
+			<td>{{order.createdAt | date: yyyy/mm/dd}}</td>
+		</tr>
+	</table>
+</div>
